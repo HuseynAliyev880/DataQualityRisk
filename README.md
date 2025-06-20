@@ -34,7 +34,7 @@ This repository includes a technical assignment related to **Data Risk Managemen
 
 ## 👤 Author
 Huseyn Aliyev  
-[LinkedIn Profile](https://linkedin.com/in/HuseynAliyev)
+[LinkedIn Profile](https://linkedin.com/in/huseynali)
 
 ---
 
