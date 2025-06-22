@@ -1,0 +1,40 @@
+
+# 📊 Kredit Portfeli üzərində Data Quality yoxlaması (Oracle SQL ilə)
+
+Salam! Bu repoda kredit portfeli datası üzərində **məlumat keyfiyyəti risklərini** yoxlamaq üçün yazdığım SQL skriptini paylaşıram. Məqsədim, real iş mühitində necə yoxlamalar aparıldığını və nəticələrin necə yekunlaşdırıldığını göstərməkdir.
+
+## 🔍 Nə etmişəm?
+
+Layihə iki hissədən ibarətdir:
+
+### 1. Tək-tək yoxlamalar (riskləri aşkarlamaq üçün)
+
+SQL vasitəsilə aşağıdakı sahələrdə problemləri yoxlamışam:
+
+- **Ad boşdursa** → Müştərinin adı yazılmayıbsa
+- **Doğum tarixi boşdursa**
+- **Kredit məbləği yazılmayıbsa**
+- **Tarix formatı düz deyilsə** (`YYYY-MM-DD` olmalıdır)
+- **Email strukturu yanlışdırsa** (məsələn: `abc@com` kimi)
+- **Telefon nömrəsi düzgün formatda deyilsə** (`+99450xxxxxxx` kimi olmalıdır)
+
+### 2. Bütün nəticələri bir cədvəldə birləşdirmişəm
+
+Hər risk üçün:
+- **Riskin adı**
+- **Bu riski daşıyan sətrlərin sayı**
+- **Yoxlama tarixi**
+- **Hansı keyfiyyət meyarına aiddir** (məsələn, Completeness və ya Validity)
+
+nəticədə belə bir cədvəl alınır:
+
+| risk_name              | risk_count | detection_date | dimension     |
+|------------------------|------------|----------------|---------------|
+| Missing Customer Name | 120        | 2025-06-22     | Completeness  |
+| Invalid Email Format  | 90         | 2025-06-22     | Validity      |
+
+## 🤝 Kimlərə faydalı ola bilər?
+
+- Data analyst və ya data governance komandasında çalışanlar
+- SQL vasitəsilə məlumat keyfiyyətini yoxlamaq istəyənlər
+- Keyfiyyətə nəzarət (QC) prosesi qurmaq istəyənlər
