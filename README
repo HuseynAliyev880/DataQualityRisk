@@ -13,7 +13,7 @@ SQL vasitəsilə aşağıdakı sahələrdə problemləri yoxlamışam:
 
 Ad boşdursa → Müştərinin adı yazılmayıbsa
 Doğum tarixi boşdursa
-Kredit məbləği yazılmayıbs
+Kredit məbləği yazılmayıbsa
 Tarix formatı düz deyilsə (`YYYY-MM-DD` olmalıdır)
 Email strukturu yanlışdırsa (məsələn: `abc@com` kimi)
 Telefon nömrəsi düzgün formatda deyilsə (`+99450xxxxxxx` kimi olmalıdır)
